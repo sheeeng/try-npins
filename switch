@@ -53,6 +53,7 @@ cmd=${1:-switch}
 if [[ "$(uname)" == "Darwin" ]]; then
   echo "Running on macOS system."
   sudo env NIX_PATH="${nix_path}" darwin-rebuild "$cmd" "$@"
+
 else if [[ "$(uname)" == "Linux" ]]; then
   echo "Running on Linux system."
   # Copied from https://github.com/ezemtsov/nixos-config/blob/3d5908c69245d31b1925cb0c5ef254357a70d643/nixos-switch file.

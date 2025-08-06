@@ -20,11 +20,11 @@
         "owner": "nix-community",
         "repo": "home-manager"
       },
-      "branch": "release-25.05",
+      "branch": "master",
       "submodules": false,
-      "revision": "fc3add429f21450359369af74c2375cb34a2d204",
-      "url": "https://github.com/nix-community/home-manager/archive/fc3add429f21450359369af74c2375cb34a2d204.tar.gz",
-      "hash": "026rvynmzmpigax9f8gy9z67lsl6dhzv2p6s8wz4w06v3gjvspm1"
+      "revision": "ad5d2b4aa770fdc74c80fd682fee0b00a8ad7991",
+      "url": "https://github.com/nix-community/home-manager/archive/ad5d2b4aa770fdc74c80fd682fee0b00a8ad7991.tar.gz",
+      "hash": "0hdkls1b7pag90g3agl59x3c1j6c9l9zlk6kx1sn84pra9kp5ps0"
     },
     "nix-darwin": {
       "type": "Git",
@@ -33,11 +33,11 @@
         "owner": "nix-darwin",
         "repo": "nix-darwin"
       },
-      "branch": "nix-darwin-25.05",
+      "branch": "master",
       "submodules": false,
-      "revision": "536f951efb1ccda9b968e3c9dee39fbeb6d3fdeb",
-      "url": "https://github.com/nix-darwin/nix-darwin/archive/536f951efb1ccda9b968e3c9dee39fbeb6d3fdeb.tar.gz",
-      "hash": "0nyniby2izss1f0srggdpxgq02padlni2lgxrb15y170f5fkshrh"
+      "revision": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
+      "url": "https://github.com/nix-darwin/nix-darwin/archive/e04a388232d9a6ba56967ce5b53a8a6f713cdfcf.tar.gz",
+      "hash": "0ygfvvnr3k2db88f5h640zq95j47hjhybfpf3flpbqysfbflrhhy"
     },
     "nixpkgs": {
       "type": "Git",
@@ -46,11 +46,11 @@
         "owner": "nixos",
         "repo": "nixpkgs"
       },
-      "branch": "release-25.05",
+      "branch": "master",
       "submodules": false,
-      "revision": "c0b2405c1d88328e059119fb5576206f0e137e3b",
-      "url": "https://github.com/nixos/nixpkgs/archive/c0b2405c1d88328e059119fb5576206f0e137e3b.tar.gz",
-      "hash": "1xza84dbxs9sr6s1nvvrn7x00br7c0yppnr9fpwpi237iq4i7vv6"
+      "revision": "dbb90777182e2ee9952dda8e0386d1065ebf7a8f",
+      "url": "https://github.com/nixos/nixpkgs/archive/dbb90777182e2ee9952dda8e0386d1065ebf7a8f.tar.gz",
+      "hash": "17nvz13w9hxfysxxppd80y3n6ph0i0jxd5fkp0bkjnayhqbc0k69"
     }
   },
   "version": 5

@@ -1,13 +1,18 @@
 # try-npins
 
 ```shell
-nix-shell -p npins --run "npins init; npins add github nixos nixpkgs --branch release-25.05"
+nix-shell --packages npins --run "npins init;"
 
 npins add github ryantm agenix --branch main
 
-npins add github nix-community home-manager --branch release-25.05
+# npins add github nixos nixpkgs --branch release-25.05
+npins add github nixos nixpkgs --branch master
 
-npins add github nix-darwin nix-darwin --branch nix-darwin-25.05
+# npins add github nix-community home-manager --branch release-25.05
+npins add github nix-community home-manager --branch master
+
+# npins add github nix-darwin nix-darwin --branch nix-darwin-25.05
+npins add github nix-darwin nix-darwin --branch master
 
 npins update --full
 
