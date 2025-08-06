@@ -44,18 +44,29 @@ if [ ${EUID:-0} -eq 0 ] || [ "$(id -u)" -eq 0 ]; then
 fi
 
 
-
 # assume that if there are no args, you want to switch to the configuration
 cmd=${1:-switch}
-# shift
+# Only shift if there are arguments, else it fails.
+if [ $# -gt 0 ]; then
+  shift
+fi
+
 
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  echo "Running on macOS system."
-  sudo env NIX_PATH="${nix_path}" darwin-rebuild "$cmd" "$@"
+  echo "Running on macOS operating system."
+  echo -e "\033[0;33m---- Switching ---------------------\033[0m"
 
-else if [[ "$(uname)" == "Linux" ]]; then
-  echo "Running on Linux system."
+  nixpkgs_pin=$(nix eval --raw -f npins/default.nix nixpkgs)
+  nix_path="nixpkgs=${nixpkgs_pin}:nixos-config=${PWD}/configuration.nix"
+  # sudo env NIX_PATH="${nix_path}" darwin-rebuild "$cmd" "$@"
+  # darwin-rebuild "$cmd" "$@"
+  nix-build '<darwin>' --attr darwin-rebuild
+
+elif [[ "$(uname)" == "Linux" ]]; then
+  echo "Running on Linux operating system."
+  echo -e "\033[0;33m---- Switching ---------------------\033[0m"
+
   # Copied from https://github.com/ezemtsov/nixos-config/blob/3d5908c69245d31b1925cb0c5ef254357a70d643/nixos-switch file.
   nixpkgs_pin=$(nix eval --raw -f /etc/nixos/npins/default.nix nixpkgs)
   nix_path="nixpkgs=${nixpkgs_pin}:nixos-config=/etc/nixos/configuration.nix"
@@ -63,6 +74,6 @@ else if [[ "$(uname)" == "Linux" ]]; then
   # evaluate the config, wasting several seconds
   sudo env NIX_PATH="${nix_path}" nixos-rebuild "$cmd" --fast "$@"
 else
-  echo "Unknown operating system."
+  echo "Runnning on unrecognized $(uname) operating system."
   exit 1
 fi
